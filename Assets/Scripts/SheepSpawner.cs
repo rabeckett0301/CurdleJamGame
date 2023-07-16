@@ -19,7 +19,7 @@ public class SheepSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !spawningSheepRunning)
+        if (Input.GetKeyDown(KeyCode.Q) && !spawningSheepRunning)
         {
             SpawnSheep();
             spawningSheepRunning = true;
