@@ -16,6 +16,7 @@ public class PlayerPickup : MonoBehaviour
         {
             ContactFilter2D contactFilter2D = new();
             contactFilter2D.SetLayerMask(pickupableMask);
+            contactFilter2D.useTriggers = true;
             Collider2D[] results = new Collider2D[1];
             Physics2D.OverlapCircle(transform.position, range, contactFilter2D, results);
             results[0].GetComponent<IPickupable>().Pickup(holdPoint);

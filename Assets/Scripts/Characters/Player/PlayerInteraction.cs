@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    float range = 2;
+    float range = 1;
 
     // Update is called once per frame
     void Update()

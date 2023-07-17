@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketSheep : MonoBehaviour, IPickupable, IInteractable
+public class BaseSheep : MonoBehaviour, IPickupable
 {
     public bool BeingCarried { get; set; }
     public Transform HoldPoint { get; set; }
 
-    [SerializeField] float boostTime;
-    [SerializeField] float boostForce;
-    float currentTime;
+    protected Rigidbody2D rb;
+    protected float gravityScale;
 
-    Rigidbody2D rb;
-    float gravityScale;
-
-    private void Start()
+    protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
@@ -34,29 +30,11 @@ public class RocketSheep : MonoBehaviour, IPickupable, IInteractable
         HoldPoint = holdPoint;
     }
 
-    private void Update()
+    protected void Update()
     {
         if (HoldPoint)
         {
             transform.position = HoldPoint.position;
-        }
-    }
-
-    public void Interact()
-    {
-        if (!BeingCarried)
-        {
-            StartCoroutine(UseRocket());
-        }
-    }
-
-    IEnumerator UseRocket()
-    {
-        while(currentTime <= boostTime)
-        {
-            currentTime += Time.deltaTime;
-            rb.velocity = new Vector2(0, boostForce);
-            yield return null;
         }
     }
 }

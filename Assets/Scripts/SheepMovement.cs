@@ -5,12 +5,16 @@ using UnityEngine;
 public class SheepMovement : MonoBehaviour
 {
     [SerializeField] MovementDirection movementDirection;
+
     [SerializeField] float movementSpeed;
+    public float MovementSpeed { get { return movementSpeed; } private set { movementSpeed = value; } }
+    float originalMovementSpeed;
     Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalMovementSpeed = MovementSpeed;
     }
 
     private void FixedUpdate()
@@ -28,6 +32,13 @@ public class SheepMovement : MonoBehaviour
     public void SetMovementDirection(MovementDirection directionToSet)
     {
         movementDirection = directionToSet;
+    }
+
+    public IEnumerator ModifyMovement(float movementSpeedBonus)
+    {
+        MovementSpeed += movementSpeedBonus;
+        yield return null;
+        MovementSpeed = originalMovementSpeed;
     }
 }
 
