@@ -7,8 +7,10 @@ public class SheepMovement : MonoBehaviour
     [SerializeField] public MovementDirection movementDirection;
 
     [SerializeField] float movementSpeed;
+    [SerializeField] LayerMask wallMask;
     public float MovementSpeed { get { return movementSpeed; } private set { movementSpeed = value; } }
     float originalMovementSpeed;
+    Vector2 direction;
     Rigidbody2D rb;
 
     private void Start()
@@ -19,14 +21,18 @@ public class SheepMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(movementDirection == MovementDirection.LEFT)
+        if (movementDirection == MovementDirection.LEFT)
         {
-            rb.velocity = new (-1 * movementSpeed, rb.velocity.y);
+            direction = new(-1, rb.velocity.y);
         }
-        else if(movementDirection == MovementDirection.RIGHT)
+        else if (movementDirection == MovementDirection.RIGHT)
         {
-            rb.velocity = new(1 * movementSpeed, rb.velocity.y);
+            direction = new(1, rb.velocity.y);
         }
+
+        rb.velocity = (direction * movementSpeed);
+
+        TryForWallCollisions();
     }
 
     public void SetMovementDirection(MovementDirection directionToSet)
@@ -39,6 +45,26 @@ public class SheepMovement : MonoBehaviour
         MovementSpeed += movementSpeedBonus;
         yield return null;
         MovementSpeed = originalMovementSpeed;
+    }
+
+    void TryForWallCollisions()
+    {
+        ContactFilter2D contactFilter2D = new();
+        contactFilter2D.SetLayerMask(wallMask);
+        RaycastHit2D[] result = new RaycastHit2D[1];
+        Physics2D.Raycast(transform.position, new Vector2(direction.x, 0f), contactFilter2D, result, 0.75f);
+
+        if (result[0].collider != null)
+        {
+            if (movementDirection == MovementDirection.LEFT)
+            {
+                SetMovementDirection(MovementDirection.RIGHT);
+            }
+            else if (movementDirection == MovementDirection.RIGHT)
+            {
+                SetMovementDirection(MovementDirection.LEFT);
+            }
+        }
     }
 }
 

@@ -8,6 +8,9 @@ public class PlayerSideViewMovement : MonoBehaviour
 
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
+
+    public LookDirection lookDirection;
+
     bool hasJumped;
     Rigidbody2D rb;
     Vector2 spawnPoint;
@@ -23,6 +26,15 @@ public class PlayerSideViewMovement : MonoBehaviour
     void Update()
     {
         rb.velocity = new (Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+
+        if(Input.GetAxis("Horizontal") < 0)
+        {
+            lookDirection = LookDirection.LEFT;
+        }
+        else if(Input.GetAxis("Horizontal") > 0)
+        {
+            lookDirection = LookDirection.RIGHT;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -75,4 +87,10 @@ public enum ksSpace
     Up,
     Down,
     Held
+}
+
+public enum LookDirection
+{
+    LEFT,
+    RIGHT
 }

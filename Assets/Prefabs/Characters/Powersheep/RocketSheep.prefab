@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8307d92a5c9b0244ad20f2ada535b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedPointer: {fileID: 56479181446854534, guid: ead7bfbc0e419764d9f82908a1154a84, type: 3}
   boostTime: 5
   boostForce: 10
 --- !u!61 &6811894685994242304
@@ -174,7 +175,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
