@@ -55,7 +55,10 @@ public class PlayerSideViewMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(rb.velocity.y == 0)
+        Vector2 direction = collision.transform.position - transform.position;
+
+        //check whether the collision was with the ground
+        if(direction.y < 0)
         {
             hasJumped = false;
         }
