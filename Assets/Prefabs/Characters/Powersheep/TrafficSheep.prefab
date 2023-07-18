@@ -99,6 +99,8 @@ MonoBehaviour:
   stoppableMask:
     serializedVersion: 2
     m_Bits: 256
+  stopSprite: {fileID: 21300000, guid: 4f15deab81faaa24cb70aa1f2f81ed5e, type: 3}
+  goSprite: {fileID: 21300000, guid: 4c8f4e25d6b147647adeb70c63d8faf3, type: 3}
 --- !u!1 &5082444204101445234
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +112,7 @@ GameObject:
   - component: {fileID: 5082444204101445235}
   - component: {fileID: 5082444204101445228}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,8 +174,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4f15deab81faaa24cb70aa1f2f81ed5e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

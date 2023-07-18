@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92e7654ffd1d1142ba7bee3c425e6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepSpawner: {fileID: 0}
 --- !u!61 &6000252371977445044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -71,7 +70,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6000252372016235415
 GameObject:
@@ -146,8 +145,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
-  m_Color: {r: 1, g: 0.69061226, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e7a3834ae43c0544ca2dccb9b45338f4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

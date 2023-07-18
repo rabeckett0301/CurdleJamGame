@@ -11,6 +11,10 @@ public class TrafficSheep : BaseSheep, IInteractable
     [SerializeField] float raycastRange;
     [SerializeField] LayerMask stoppableMask;
 
+    [Header("Sprites")]
+    [SerializeField] Sprite stopSprite;
+    [SerializeField] Sprite goSprite;
+
     private TrafficMode mode;
 
 
@@ -87,12 +91,12 @@ public class TrafficSheep : BaseSheep, IInteractable
         if(mode == TrafficMode.GO)
         {
             mode = TrafficMode.STOP;
-            GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            GetComponentInChildren<SpriteRenderer>().sprite = stopSprite;
         }
         else
         {
             mode = TrafficMode.GO;
-            GetComponentInChildren<SpriteRenderer>().color = Color.green;
+            GetComponentInChildren<SpriteRenderer>().sprite = goSprite;
         }
     }
 }
