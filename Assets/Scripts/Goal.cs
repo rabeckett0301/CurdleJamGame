@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField] SheepSpawner sheepSpawner;
     int sheepCount;
 
     private void Start()

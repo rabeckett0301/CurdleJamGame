@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SheepMovement : MonoBehaviour
 {
-    [SerializeField] MovementDirection movementDirection;
+    [SerializeField] public MovementDirection movementDirection;
 
     [SerializeField] float movementSpeed;
     public float MovementSpeed { get { return movementSpeed; } private set { movementSpeed = value; } }

@@ -8,11 +8,11 @@ public class ActivationButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        objectToActivate.SetActive(true);
+        objectToActivate.GetComponent<IActivatable>().Activate();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        objectToActivate.SetActive(false);
+        objectToActivate.GetComponent<IActivatable>().Deactivate();
     }
 }
