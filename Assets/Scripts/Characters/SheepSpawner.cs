@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SheepSpawner : MonoBehaviour
 {
+    [SerializeField] GameEvent OnSheepSpawn;
     [SerializeField] GameObject sheepPrefab;
     [SerializeField] MovementDirection movementDirection;
     [SerializeField] int numberOfSheepToSpawn;
@@ -38,6 +39,7 @@ public class SheepSpawner : MonoBehaviour
     {
         GameObject sheep = Instantiate(sheepPrefab, transform.position, Quaternion.identity);
         sheep.GetComponent<SheepMovement>().SetMovementDirection(movementDirection);
+        OnSheepSpawn?.Raise();
         yield return new WaitForSeconds(timeToWait);
         sheepCount++;
         SpawnSheep();
