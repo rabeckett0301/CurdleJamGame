@@ -758,6 +758,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4926741823636590396, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
+      propertyPath: OnSheepSpawn
+      value: 
+      objectReference: {fileID: 11400000, guid: e8751a0d68bc8da4980735b550aa5ec3, type: 2}
+    - target: {fileID: 4926741823636590396, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
       propertyPath: movementDirection
       value: 1
       objectReference: {fileID: 0}
