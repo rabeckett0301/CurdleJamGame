@@ -31,15 +31,17 @@ public class FakeWolfSheep : BaseSheep
                 return;
             }
 
+            Vector2 direction = hit.transform.position - transform.position;
+
             SheepMovement sheepMovement = hit.gameObject.GetComponent<SheepMovement>();
 
-            if(sheepMovement.movementDirection == MovementDirection.LEFT)
+            if(direction.x < 0)
             {
-                sheepMovement.SetMovementDirection(MovementDirection.RIGHT);
+                sheepMovement.SetMovementDirection(MovementDirection.LEFT);
             }
             else
             {
-                sheepMovement.SetMovementDirection(MovementDirection.LEFT);
+                sheepMovement.SetMovementDirection(MovementDirection.RIGHT);
             }
         }
     }

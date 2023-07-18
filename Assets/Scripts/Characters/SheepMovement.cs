@@ -30,7 +30,7 @@ public class SheepMovement : MonoBehaviour
             direction = new(1, rb.velocity.y);
         }
 
-        rb.velocity = (direction * movementSpeed);
+        rb.velocity = new(direction.x * movementSpeed, rb.velocity.y);
 
         TryForWallCollisions();
     }
