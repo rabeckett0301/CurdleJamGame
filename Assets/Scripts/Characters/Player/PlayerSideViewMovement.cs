@@ -49,14 +49,16 @@ public class PlayerSideViewMovement : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("SPace pressed");
         rb.velocity = Vector2.zero;
         rb.velocity = new Vector2(0, jumpForce);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        hasJumped = false;
+        if(rb.velocity.y == 0)
+        {
+            hasJumped = false;
+        }
     }
 
     public void ReturnToStartPosition()
