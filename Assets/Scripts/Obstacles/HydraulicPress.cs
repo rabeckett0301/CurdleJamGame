@@ -32,6 +32,8 @@ public class HydraulicPress : MonoBehaviour, IActivatable
 
     IEnumerator StartRetracting()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
+
         while(Vector2.Distance(collisionPoint.position, retractPoint.position) > 0.05f)
         {
             transform.position += new Vector3(0, retractSpeed) * Time.deltaTime;
@@ -41,10 +43,20 @@ public class HydraulicPress : MonoBehaviour, IActivatable
 
     IEnumerator Drop()
     {
+        GetComponent<BoxCollider2D>().enabled = true;
+
         while (Vector2.Distance(collisionPoint.position, startPoint.position) > 0.05f)
         {
             transform.position += new Vector3(0, dropSpeed) * Time.deltaTime;
             yield return null;
         }
+
+        GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+        Debug.Log("Sheep squashed!");
     }
 }
