@@ -15,5 +15,10 @@ public class GameManager : MonoBehaviour
     public void SheepDied()
     {
         sheepDied++;
+
+        if (sheepDied >= 3)
+        {
+            Time.timeScale = 0f;
+        }
     }
 }
