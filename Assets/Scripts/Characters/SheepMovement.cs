@@ -12,10 +12,12 @@ public class SheepMovement : MonoBehaviour
     float originalMovementSpeed;
     Vector2 direction;
     Rigidbody2D rb;
+    Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         originalMovementSpeed = MovementSpeed;
     }
 
@@ -24,10 +26,14 @@ public class SheepMovement : MonoBehaviour
         if (movementDirection == MovementDirection.LEFT)
         {
             direction = new(-1, rb.velocity.y);
+            animator.SetBool("IsMovingLeft", true);
+            animator.SetBool("IsMovingRight", false);
         }
         else if (movementDirection == MovementDirection.RIGHT)
         {
             direction = new(1, rb.velocity.y);
+            animator.SetBool("IsMovingRight", true);
+            animator.SetBool("IsMovingLeft", false);
         }
 
         rb.velocity = new(direction.x * movementSpeed, rb.velocity.y);
