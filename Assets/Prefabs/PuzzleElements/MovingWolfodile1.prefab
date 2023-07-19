@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7952910425752578054}
   - component: {fileID: 7952910425752578055}
   m_Layer: 10
-  m_Name: MovingWolfodile
+  m_Name: MovingWolfodile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
