@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92e7654ffd1d1142ba7bee3c425e6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSheepSaved: {fileID: 11400000, guid: 5f14847c48b944542b57e9e7ef08193c, type: 2}
 --- !u!61 &6000252371977445044
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class SheepMovement : MonoBehaviour
 {
     [SerializeField] public MovementDirection movementDirection;
-
     [SerializeField] float movementSpeed;
     [SerializeField] LayerMask wallMask;
     public float MovementSpeed { get { return movementSpeed; } private set { movementSpeed = value; } }

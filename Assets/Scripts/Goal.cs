@@ -6,6 +6,8 @@ public class Goal : MonoBehaviour
 {
     int sheepCount;
 
+    [SerializeField] GameEvent OnSheepSaved;
+
     private void Start()
     {
         sheepCount = 0;
@@ -17,7 +19,10 @@ public class Goal : MonoBehaviour
         {
             sheepCount++;
             Debug.Log("Saved " + sheepCount + " sheep!");
-            Destroy(collision.gameObject);
+
+            OnSheepSaved?.Raise();
+        
+            collision.gameObject.SetActive(true);
         }
     }
 }

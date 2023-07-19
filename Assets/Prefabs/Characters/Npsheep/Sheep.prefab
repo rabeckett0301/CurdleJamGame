@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 239936985}
   - component: {fileID: 1529002440646409819}
   - component: {fileID: 143724079274556473}
+  - component: {fileID: 991890503672384811}
   m_Layer: 8
   m_Name: Sheep
   m_TagString: Sheep
@@ -111,6 +112,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &991890503672384811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169332728988149876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2c36e042c20424995a8c0d60557ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSheepDied: {fileID: 11400000, guid: c0f19e669c1baa242b7b74f773540eda, type: 2}
 --- !u!1 &169332729109631373
 GameObject:
   m_ObjectHideFlags: 0

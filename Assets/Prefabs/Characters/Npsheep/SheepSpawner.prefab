@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4926741823636590403}
   - component: {fileID: 4926741823636590396}
+  - component: {fileID: 5219642548164862142}
   m_Layer: 0
   m_Name: SheepSpawner
   m_TagString: Untagged
@@ -129,7 +130,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0857de4de74eefb41b28746bb57a599f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnSheepSpawn: {fileID: 11400000, guid: e8751a0d68bc8da4980735b550aa5ec3, type: 2}
   sheepPrefab: {fileID: 169332728988149876, guid: cde7bd440e5287e45af6adcac43fb510, type: 3}
   movementDirection: 1
   numberOfSheepToSpawn: 3
   timeBetweenSheep: 1
+--- !u!114 &5219642548164862142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926741823636590402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20d86df764d65e4c9fda526fa5fb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7be39528f483d0c4fa53bf7b8e2fc6c2, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4926741823636590396}
+        m_TargetAssemblyTypeName: SheepSpawner, Assembly-CSharp
+        m_MethodName: SpawnSheep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
