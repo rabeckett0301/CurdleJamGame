@@ -26,6 +26,11 @@ public class LevelFailedHandler : MonoBehaviour
         transition.LoadLevel(SceneManager.GetActiveScene().name);
     }
 
+    public void GoTo(string scene)
+    {
+        transition.LoadLevel(scene);
+    }
+
     private void Awake()
     {
         try
