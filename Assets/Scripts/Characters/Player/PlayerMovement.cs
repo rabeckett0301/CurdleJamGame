@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSideViewMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     ksSpace keyStateSpace;
 
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
 
-    public LookDirection lookDirection;
+    [HideInInspector] public LookDirection lookDirection;
 
     bool hasJumped;
     Rigidbody2D rb;
@@ -87,10 +87,16 @@ public class PlayerSideViewMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 direction = collision.transform.position - transform.position;
+        /*Vector2 direction = collision.transform.position - transform.position;
 
         //check whether the collision was with the ground
         if (direction.y < 0)
+        {
+            hasJumped = false;
+            animator.SetBool("IsJumping", false);
+        }*/
+
+        if(rb.velocity.y <= 0.1f)
         {
             hasJumped = false;
             animator.SetBool("IsJumping", false);

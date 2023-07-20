@@ -17,6 +17,11 @@ public class WolfodileMoving : MonoBehaviour
     Vector2 direction;
     Rigidbody2D rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     public void FixedUpdate()
     {
         if (awake)
@@ -61,8 +66,13 @@ public class WolfodileMoving : MonoBehaviour
         moveDirection = directionToSet;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.layer == 0)
+        {
+            return;
+        }
+
         //this needs to do stuff regarding the sheep count
         Debug.Log("Sheep eaten!");
         Destroy(collision.gameObject);

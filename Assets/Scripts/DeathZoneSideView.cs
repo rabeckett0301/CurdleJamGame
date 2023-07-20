@@ -8,7 +8,7 @@ public class DeathZoneSideView : MonoBehaviour
     {
         Debug.Log("You lose! Good day sir!");
 
-        if(collision.TryGetComponent(out PlayerSideViewMovement player))
+        if(collision.TryGetComponent(out PlayerMovement player))
         {
             player.ReturnToStartPosition();
         }

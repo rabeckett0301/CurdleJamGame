@@ -6,7 +6,7 @@ public class PlayerPickup : MonoBehaviour
 {
     GameObject heldItem;
     IPickupable selectedItem;
-    PlayerSideViewMovement playerMovement;
+    PlayerMovement playerMovement;
     [SerializeField] LayerMask pickupableMask;
     [SerializeField] Transform holdPoint;
     [SerializeField] GameObject dropPoint;
@@ -14,7 +14,7 @@ public class PlayerPickup : MonoBehaviour
 
     private void Start()
     {
-        playerMovement = GetComponent<PlayerSideViewMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame

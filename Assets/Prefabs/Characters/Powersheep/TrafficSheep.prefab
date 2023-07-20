@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a139f41dfdf4843429106656801ef466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPointer: {fileID: 4710060150852967671, guid: ab6c6683d65fa8349b045ace675a53e3, type: 3}
+  selectedPointer: {fileID: 56479181446854534, guid: ead7bfbc0e419764d9f82908a1154a84, type: 3}
   incrementPerSheep: 0.5
   raycastRange: 1
   stoppableMask:
