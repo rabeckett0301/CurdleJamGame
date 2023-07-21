@@ -31,9 +31,9 @@ public class LevelWin : MonoBehaviour
         }
     }
 
-    public void SetScore(int amountDied)
+    public void SheepLost()
     {
-        this.sheepLost = amountDied;
+        sheepLost++;
     }
 
     private IEnumerator ShowScore()
