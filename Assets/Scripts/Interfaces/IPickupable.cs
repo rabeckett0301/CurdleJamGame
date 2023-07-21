@@ -14,6 +14,8 @@ public interface IPickupable
 
     public GameObject GetGameObject();
 
+    public void SetLastLookedLeft(bool lastLookedLeft);
+
     public bool BeingCarried { get; set; }
 
     public Transform HoldPoint { get; set; }

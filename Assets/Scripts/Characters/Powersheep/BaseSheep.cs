@@ -11,12 +11,14 @@ public class BaseSheep : MonoBehaviour, IPickupable
     [SerializeField] GameObject selectedPointer;
 
     protected Rigidbody2D rb;
+    protected Animator animator;
     protected float gravityScale;
 
     protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
+        animator = GetComponent<Animator>();
 
         GameObject mySelectedPointer = Instantiate(selectedPointer, new (transform.position.x, transform.position.y + 1), Quaternion.identity);
         mySelectedPointer.transform.SetParent(transform);
@@ -69,6 +71,11 @@ public class BaseSheep : MonoBehaviour, IPickupable
 
     public GameObject GetGameObject()
     {
-        return this.gameObject;
+        return gameObject;
+    }
+
+    public void SetLastLookedLeft(bool lastLookedLeft)
+    {
+        animator.SetBool("LastLookedLeft", lastLookedLeft);
     }
 }

@@ -40,11 +40,14 @@ public class PlayerPickup : MonoBehaviour
             if(playerMovement.lookDirection == LookDirection.LEFT)
             {
                 dropPoint.transform.localPosition = new Vector3(-1.25f, 0.75f);
+                heldItem.GetComponent<IPickupable>().SetLastLookedLeft(true);
             }
             else
             {
                 dropPoint.transform.localPosition = new Vector3(1.25f, 0.75f);
+                heldItem.GetComponent<IPickupable>().SetLastLookedLeft(false);
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.E) && !heldItem)

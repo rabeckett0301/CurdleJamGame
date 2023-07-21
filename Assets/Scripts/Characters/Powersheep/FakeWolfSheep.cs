@@ -7,6 +7,7 @@ public class FakeWolfSheep : BaseSheep
     [SerializeField] float range;
     [SerializeField] LayerMask scareableMask;
 
+    
     private void FixedUpdate()
     {
         CheckForSheep();
@@ -38,10 +39,14 @@ public class FakeWolfSheep : BaseSheep
             if(direction.x < 0)
             {
                 sheepMovement.SetMovementDirection(MovementDirection.LEFT);
+                SetLastLookedLeft(true);
+                animator.SetTrigger("IsScaring");
             }
             else
             {
                 sheepMovement.SetMovementDirection(MovementDirection.RIGHT);
+                SetLastLookedLeft(false);
+                animator.SetTrigger("IsScaring");
             }
         }
     }

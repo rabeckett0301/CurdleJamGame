@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926741823636590403, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.657418
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4926741823636590403, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
       propertyPath: m_LocalPosition.y
@@ -374,7 +374,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &712118225
 PrefabInstance:
@@ -834,9 +834,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6811894685994242307, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
+      propertyPath: boostTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811894685994242307, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
+      propertyPath: boostForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6811894685994242310, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
       propertyPath: m_Name
       value: RocketSheep
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811894685994242310, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
@@ -7658,7 +7670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2793373684109279262, guid: 541b0b41da589014482ca9b5cae4ab35, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2793373684109279262, guid: 541b0b41da589014482ca9b5cae4ab35, type: 3}
       propertyPath: m_LocalPosition.x
