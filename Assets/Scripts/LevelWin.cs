@@ -13,7 +13,15 @@ public class LevelWin : MonoBehaviour
     }
     public void NextLevel()
     {
-        var nextLevelIndex = SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1).name;
-        transition.LoadLevel(nextLevelIndex);
+        try
+        {
+            var nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            transition.LoadLevel(nextLevelIndex);
+        }
+        catch
+        {
+            transition.LoadLevel("LevelSelect");
+        }
     }
 }

@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TransitionChange transition;
-
     public GameEvent OnLevelStarted;
     public GameEvent OnWin;
 
@@ -19,22 +17,26 @@ public class GameManager : MonoBehaviour
         sheepSpawned++;
     }
 
-    public void SheepDied()
-    {
-        sheepDied++;
-
-        if (sheepDied >= 3)
-        {
-            
-        }
-    }
-
     public void LoadNewLevel()
     {
         if (sheepSpawned == sheepSaved + sheepDied)
         {
             OnWin?.Raise();
         }
+    }
+
+    public void IncreaseSheepCount()
+    {
+        sheepSpawned++;
+    }
+
+    public void IncreaseDeadSheep()
+    {
+        sheepDied++;
+    }
+    public void IncreaseSavedSheep()
+    {
+        sheepSaved++;
     }
 
     private void Start()
