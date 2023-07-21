@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             OnWin?.Raise();
         }
+
+        Debug.Log($"spawned = {sheepSpawned}       added = {sheepSaved + sheepDied}");
     }
 
     public void IncreaseSheepCount()
