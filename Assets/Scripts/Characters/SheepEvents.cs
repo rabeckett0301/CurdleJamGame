@@ -8,10 +8,11 @@ public class SheepEvents : MonoBehaviour
     [SerializeField] GameObject deathParticleEffects;
     [SerializeField] GameObject deathGhost;
 
-    private void OnDestroy()
+    public void DestroySheep()
     {
         Instantiate(deathParticleEffects, transform.position, Quaternion.identity);
         Instantiate(deathGhost, transform.position, Quaternion.identity);
         OnSheepDied?.Raise();
+        Destroy(gameObject);
     }
 }

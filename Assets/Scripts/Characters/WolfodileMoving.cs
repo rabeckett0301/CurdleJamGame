@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WolfodileMoving : MonoBehaviour
+public class WolfodileMoving : MonoBehaviour, IDestroySheep
 {
     bool awake = false;
 
@@ -68,14 +68,17 @@ public class WolfodileMoving : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 0)
+        if (collision.transform.TryGetComponent(out SheepEvents sheepToDestroy))
         {
-            return;
+            DestroyNPSheep(sheepToDestroy);
+            //animator.SetTrigger("IsEating");
+            Debug.Log("Sheep eaten!");
         }
+    }
 
-        //this needs to do stuff regarding the sheep count
-        Debug.Log("Sheep eaten!");
-        Destroy(collision.gameObject);
+    public void DestroyNPSheep(SheepEvents sheepToDestroy)
+    {
+        sheepToDestroy.DestroySheep();
     }
 
     public void StartMovement()

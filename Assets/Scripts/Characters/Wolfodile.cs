@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wolfodile : MonoBehaviour
+public class Wolfodile : MonoBehaviour, IDestroySheep
 {
     Animator animator;
-
-    [SerializeField] LayerMask groundLayer;
 
     private void Start()
     {
@@ -15,14 +13,16 @@ public class Wolfodile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //this needs to do stuff regarding the sheep count
-        if(collision.gameObject.layer == groundLayer)
+        if(collision.transform.TryGetComponent(out SheepEvents sheepToDestroy))
         {
-            return;
+            DestroyNPSheep(sheepToDestroy);
+            animator.SetTrigger("IsEating");
+            Debug.Log("Sheep eaten!");
         }
+    }
 
-        Debug.Log("Sheep eaten!");
-        animator.SetTrigger("IsEating");
-        Destroy(collision.gameObject);
+    public void DestroyNPSheep(SheepEvents sheepToDestroy)
+    {
+        sheepToDestroy.DestroySheep();
     }
 }
