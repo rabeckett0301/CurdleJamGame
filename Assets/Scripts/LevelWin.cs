@@ -10,7 +10,7 @@ public class LevelWin : MonoBehaviour
     public List<Sprite> WinSprites = new List<Sprite>();
 
     private TransitionChange transition;
-    private WaitForSeconds delayPerStar= new WaitForSeconds(1f);
+    private WaitForSeconds delayPerStar= new WaitForSeconds(0.5f);
     private int sheepLost;
 
     private void Awake()
@@ -36,11 +36,16 @@ public class LevelWin : MonoBehaviour
         sheepLost++;
     }
 
+    public void RevealScoreInUI()
+    {
+        StartCoroutine(ShowScore());
+    }
+
     private IEnumerator ShowScore()
     {
         yield return delayPerStar;
 
-        for (int i = 0; i < sheepLost; i++)
+        for (int i = 0; i < GlobalConsts.MAX_SHEEP_DEATHS - sheepLost; i++)
         {
             Sprites[i].sprite = WinSprites[i];
             yield return delayPerStar;
