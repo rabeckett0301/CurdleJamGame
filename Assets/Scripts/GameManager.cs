@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public TransitionChange transition;
+
     public GameEvent OnLevelStarted;
+    public GameEvent OnWin;
 
     private int sheepSpawned;
     private int sheepDied;
+    private int sheepSaved;
 
     public void SheepSpawn()
     {
@@ -20,7 +25,15 @@ public class GameManager : MonoBehaviour
 
         if (sheepDied >= 3)
         {
-            Time.timeScale = 0f;
+            
+        }
+    }
+
+    public void LoadNewLevel()
+    {
+        if (sheepSpawned == sheepSaved + sheepDied)
+        {
+            OnWin?.Raise();
         }
     }
 
@@ -40,4 +53,5 @@ public class GameManager : MonoBehaviour
 
         OnLevelStarted?.Raise();
     }
+
 }
