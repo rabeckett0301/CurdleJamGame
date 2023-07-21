@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9082812262698184940}
   - component: {fileID: 9082812262698184947}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c4d0777907127e8479b01433b379892e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b832433667c1f547b372090db0813e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 9082812263165413654}
   - component: {fileID: 9082812263165413655}
   - component: {fileID: 4562673508854374604}
+  - component: {fileID: 1392089741709148227}
   m_Layer: 6
   m_Name: SpeedSheep
   m_TagString: Untagged
@@ -184,3 +185,24 @@ MonoBehaviour:
   speedableMask:
     serializedVersion: 2
     m_Bits: 256
+--- !u!95 &1392089741709148227
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9082812263165413648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 982bce2a06fade040b31a9e4e6a754d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

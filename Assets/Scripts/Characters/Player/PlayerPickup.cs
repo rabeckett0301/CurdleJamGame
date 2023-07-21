@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPickup : MonoBehaviour
 {
     GameObject heldItem;
+    Animator animator;
     IPickupable selectedItem;
     PlayerMovement playerMovement;
     [SerializeField] LayerMask pickupableMask;
@@ -15,6 +16,7 @@ public class PlayerPickup : MonoBehaviour
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +66,8 @@ public class PlayerPickup : MonoBehaviour
             selectedItem.Selected = false;
             selectedItem = null;
             dropPoint.SetActive(true);
+            animator.SetBool("IsHolding", true);
+            
         }
         else if(Input.GetKeyDown(KeyCode.E) && heldItem)
         {
@@ -71,6 +75,7 @@ public class PlayerPickup : MonoBehaviour
             heldItem.transform.SetParent(null);
             heldItem = null;
             dropPoint.SetActive(false);
+            animator.SetBool("IsHolding", false);
         }
     }
 

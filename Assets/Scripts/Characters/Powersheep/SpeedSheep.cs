@@ -39,6 +39,7 @@ public class SpeedSheep : BaseSheep
 
             SheepMovement sheepMovement = hit.GetComponent<SheepMovement>();
             StartCoroutine(sheepMovement.ModifyMovement(speedBonus));
+            animator.SetTrigger("IsBoosting");
         }
     }
 }

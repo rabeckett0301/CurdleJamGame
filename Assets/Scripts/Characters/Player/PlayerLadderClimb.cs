@@ -22,7 +22,7 @@ public class PlayerLadderClimb : MonoBehaviour
 
         isClimbing = false;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetAxis("Vertical") > 0.5f) 
         {
             isClimbing = true;
         }

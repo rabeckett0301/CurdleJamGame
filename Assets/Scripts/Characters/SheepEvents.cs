@@ -25,6 +25,12 @@ public class SheepEvents : MonoBehaviour
         //do something with animation
         
         OnSheepSaved?.Raise();
+        GetComponent<Animator>().SetTrigger("Saved");
+        
+    }
+
+    public void DisableSheep()
+    {
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
     }

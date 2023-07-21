@@ -88,11 +88,13 @@ public class TrafficSheep : BaseSheep, IInteractable
         {
             mode = TrafficMode.STOP;
             animator.SetTrigger("IsFlipping");
+            animator.SetBool("IsStopOn", true);
         }
         else
         {
             mode = TrafficMode.GO;
             animator.SetTrigger("IsFlipping");
+            animator.SetBool("IsStopOn", false);
         }
     }
 }

@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         {
             lookDirection = LookDirection.RIGHT;
             animator.SetBool("IsMovingRight", true);
-
             animator.SetBool("IsMovingLeft", false);
             lastMovedLeft = false;
         }
@@ -50,10 +49,9 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsMovingLeft", false);
             animator.SetBool("IsMovingRight", false);
-
-            animator.SetBool("LastMovedLeft", lastMovedLeft);
-
         }
+
+        animator.SetBool("LastMovedLeft", lastMovedLeft);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

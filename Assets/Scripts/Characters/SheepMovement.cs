@@ -20,6 +20,11 @@ public class SheepMovement : MonoBehaviour
         originalMovementSpeed = MovementSpeed;
     }
 
+    private void Update()
+    {
+        animator.SetFloat("VelocityY", rb.velocity.y);
+    }
+
     private void FixedUpdate()
     {
         if (movementDirection == MovementDirection.LEFT)
