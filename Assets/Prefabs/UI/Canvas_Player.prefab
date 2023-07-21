@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 1516854249103202345}
   - component: {fileID: 971216804}
   - component: {fileID: 971216805}
+  - component: {fileID: 5627311907684816123}
   - component: {fileID: 971216806}
   - component: {fileID: 1759547483892823353}
   m_Layer: 5
@@ -800,6 +801,34 @@ MonoBehaviour:
       - m_Target: {fileID: 971216799}
         m_TargetAssemblyTypeName: LevelFailedHandler, Assembly-CSharp
         m_MethodName: ReloadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5627311907684816123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319880794155965948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20d86df764d65e4c9fda526fa5fb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c0f19e669c1baa242b7b74f773540eda, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2242773007416267099}
+        m_TargetAssemblyTypeName: LevelWin, Assembly-CSharp
+        m_MethodName: SheepLost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
