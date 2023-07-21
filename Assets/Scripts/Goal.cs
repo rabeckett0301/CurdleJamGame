@@ -17,12 +17,7 @@ public class Goal : MonoBehaviour
     {
         if (collision.CompareTag("Sheep"))
         {
-            sheepCount++;
-            Debug.Log("Saved " + sheepCount + " sheep!");
-
-            OnSheepSaved?.Raise();
-        
-            collision.gameObject.SetActive(true);
+            collision.GetComponent<SheepEvents>().SaveSheep();
         }
     }
 }

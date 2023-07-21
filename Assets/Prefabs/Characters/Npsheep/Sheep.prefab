@@ -127,6 +127,7 @@ MonoBehaviour:
   OnSheepDied: {fileID: 11400000, guid: c0f19e669c1baa242b7b74f773540eda, type: 2}
   deathParticleEffects: {fileID: 7573395367299154186, guid: a5a8a901a23d72747898d7e558c0e00c, type: 3}
   deathGhost: {fileID: 6473122423965490774, guid: ef17ad5a1c013d845b9972780d6dcc18, type: 3}
+  OnSheepSaved: {fileID: 11400000, guid: 5f14847c48b944542b57e9e7ef08193c, type: 2}
 --- !u!1 &169332729109631373
 GameObject:
   m_ObjectHideFlags: 0
