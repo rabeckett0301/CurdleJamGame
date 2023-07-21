@@ -8,7 +8,6 @@ public class SpringSheep : BaseSheep
     [SerializeField] LayerMask bounceableMask;
     float cooldownBetweenBounces = 0.35f;
     bool canBounce = true;
-    int timesCalled;
 
     private void FixedUpdate()
     {
@@ -35,8 +34,6 @@ public class SpringSheep : BaseSheep
         if (results[0].TryGetComponent(out Rigidbody2D rb))
         {
             rb.AddForce(Vector2.up * bounceForce, ForceMode2D.Impulse);
-            timesCalled++;
-            Debug.Log(timesCalled);
             StartCoroutine(HandleCooldown(cooldownBetweenBounces));
         }
     }

@@ -72,7 +72,6 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
         {
             DestroyNPSheep(sheepToDestroy);
             //animator.SetTrigger("IsEating");
-            Debug.Log("Sheep eaten!");
         }
     }
 

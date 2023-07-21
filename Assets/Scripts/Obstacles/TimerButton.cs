@@ -39,7 +39,6 @@ public class TimerButton : MonoBehaviour
         while (currentTime <= timeToDeactivate)
         {
             currentTime += Time.deltaTime;
-            Debug.Log((1 - (currentTime / timeToDeactivate)) * 100 + "% time remaining");
 
             OnTimerChanged?.Invoke(this, new OnTimerChangedArgs { timeRemainingNormalized = currentTime / timeToDeactivate });
 

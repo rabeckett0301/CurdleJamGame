@@ -21,6 +21,5 @@ public class Spikes : MonoBehaviour, IActivatable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
-        Debug.Log("Sheep spiked!");
     }
 }
