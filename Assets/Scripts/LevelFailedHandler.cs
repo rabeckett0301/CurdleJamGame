@@ -9,13 +9,11 @@ public class LevelFailedHandler : MonoBehaviour
 
     private int deadSheepCount = 0;
 
-    private const int MAX_SHEEP_DEAD = 3;
-
     public void SheepDied()
     {
         deadSheepCount++;
 
-        if (deadSheepCount >= MAX_SHEEP_DEAD)
+        if (deadSheepCount >= GlobalConsts.MAX_SHEEP_DEATHS)
         {
             ReloadLevel();
         }

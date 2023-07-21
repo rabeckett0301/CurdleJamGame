@@ -680,6 +680,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4926741823636590403, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
   m_PrefabInstance: {fileID: 106601291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &979756825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2319880794155965948, guid: 4a794c48bfeceaa4db5573bb11afe300, type: 3}
+  m_PrefabInstance: {fileID: 1012282149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1012282149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,6 +791,45 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2587796675661115458, guid: 4a794c48bfeceaa4db5573bb11afe300, type: 3}
   m_PrefabInstance: {fileID: 1012282149}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1012282157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 971216799, guid: 4a794c48bfeceaa4db5573bb11afe300, type: 3}
+  m_PrefabInstance: {fileID: 1012282149}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979756825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c713412e3d8e044a192aa3b88bf123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1012282161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979756825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20d86df764d65e4c9fda526fa5fb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c0f19e669c1baa242b7b74f773540eda, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1012282157}
+        m_TargetAssemblyTypeName: LevelFailedHandler, Assembly-CSharp
+        m_MethodName: SheepDied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1143735531
 PrefabInstance:
   m_ObjectHideFlags: 0
