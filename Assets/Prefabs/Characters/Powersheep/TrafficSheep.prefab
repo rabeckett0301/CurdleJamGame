@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5082444203629420425}
   - component: {fileID: 5082444203629420424}
   - component: {fileID: 4072619323680200590}
+  - component: {fileID: 2377782800671555650}
   m_Layer: 6
   m_Name: TrafficSheep
   m_TagString: Untagged
@@ -102,6 +103,27 @@ MonoBehaviour:
     m_Bits: 256
   stopSprite: {fileID: 21300000, guid: 4f15deab81faaa24cb70aa1f2f81ed5e, type: 3}
   goSprite: {fileID: 21300000, guid: 4c8f4e25d6b147647adeb70c63d8faf3, type: 3}
+--- !u!95 &2377782800671555650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082444203629420431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd2595c2c9d43ff42be796d0edfb0467, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5082444204101445234
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5082444204101445234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.04737873}
+  m_LocalPosition: {x: 0, y: 0.092, z: -0.04737873}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,9 +197,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f15deab81faaa24cb70aa1f2f81ed5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a81bb95a542cfe479f929c4300ab82c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
