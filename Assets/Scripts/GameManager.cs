@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadNewLevel()
     {
-        if (sheepSpawned == sheepSaved + sheepDied)
+        if (sheepSpawned == sheepSaved + sheepDied && sheepDied < GlobalConsts.MAX_SHEEP_DEATHS)
         {
             OnWin?.Raise();
         }
