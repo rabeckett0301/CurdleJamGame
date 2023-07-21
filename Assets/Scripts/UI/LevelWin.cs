@@ -6,10 +6,13 @@ using UnityEngine.UI;
 
 public class LevelWin : MonoBehaviour
 {
+    [SerializeField] GameEvent OnStarSpawn;
+
     public List<Image> Sprites = new List<Image>();
     public List<Sprite> WinSprites = new List<Sprite>();
 
     private TransitionChange transition;
+    private WaitForSeconds initialDelay = new WaitForSeconds(2.25f);
     private WaitForSeconds delayPerStar= new WaitForSeconds(0.5f);
     private int sheepLost;
 
@@ -43,11 +46,12 @@ public class LevelWin : MonoBehaviour
 
     private IEnumerator ShowScore()
     {
-        yield return delayPerStar;
+        yield return initialDelay;
 
         for (int i = 0; i < GlobalConsts.MAX_SHEEP_DEATHS - sheepLost; i++)
         {
             Sprites[i].sprite = WinSprites[i];
+            OnStarSpawn?.Raise();
             yield return delayPerStar;
         }
 
