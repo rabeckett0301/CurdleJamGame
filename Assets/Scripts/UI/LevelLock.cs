@@ -25,11 +25,14 @@ public class LevelLock : MonoBehaviour
     public void LockLevels()
     {
         unlocked = PlayerPrefs.GetInt(GlobalConsts.LEVELS_UNLOCKED);
-
-        for (var i = 0; i < unlocked; i++)
+        try
         {
-            levels[i].interactable = true;
+            for (var i = 0; i < unlocked; i++)
+            {
+                levels[i].interactable = true;
+            }
         }
+        catch { }
     }
 
 
