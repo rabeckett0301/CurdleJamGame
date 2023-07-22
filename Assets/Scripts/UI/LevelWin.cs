@@ -22,13 +22,13 @@ public class LevelWin : MonoBehaviour
     }
     public void NextLevel()
     {
-        try
-        {
-            var nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        var nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
+        if (nextLevelIndex < GlobalConsts.SCENE_COUNT)
+        {
             transition.LoadLevel(nextLevelIndex);
         }
-        catch
+        else
         {
             transition.LoadLevel("LevelSelect");
         }
