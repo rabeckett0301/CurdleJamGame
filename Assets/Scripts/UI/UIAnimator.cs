@@ -10,13 +10,23 @@ public class UIAnimator : MonoBehaviour
     public float delay;
 
     private WaitForSecondsRealtime waitDelay;
-    [Space(5)]
     private int index = 0;
+
+    private Coroutine coro;
 
     private void Awake()
     {
         waitDelay = new WaitForSecondsRealtime(delay);
-        StartCoroutine(ChangeFrames());
+    }
+
+    private void OnEnable()
+    {
+        coro = StartCoroutine(ChangeFrames());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(coro);
     }
 
     public IEnumerator ChangeFrames()
