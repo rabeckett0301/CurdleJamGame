@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpringSheep : BaseSheep
+public class SpringSheep : BaseSheep, IInteractable
 {
     [SerializeField] float bounceForce;
     [SerializeField] LayerMask bounceableMask;
     float cooldownBetweenBounces = 0.35f;
     bool canBounce = true;
+    bool springMode = false;
 
     private void FixedUpdate()
     {
-        if (HoldPoint || !canBounce)
+        if (HoldPoint || !canBounce || !springMode)
         {
             return;
         }
 
         TryForCollisions();
     }
+
+   
 
     private void TryForCollisions()
     {
@@ -40,8 +43,26 @@ public class SpringSheep : BaseSheep
 
     IEnumerator HandleCooldown(float cooldown)
     {
+        animator.SetTrigger("Bouncing");
         canBounce = false;
         yield return new WaitForSeconds(cooldown);
         canBounce = true;
+    }
+
+    public void Interact()
+    {
+        if (!HoldPoint)
+        {
+            springMode = !springMode;
+            animator.SetBool("SpringMode", springMode);
+        }
+    }
+
+    public override void Pickup(Transform holdPoint)
+    {
+        if (!springMode)
+        {
+            base.Pickup(holdPoint);
+        }
     }
 }

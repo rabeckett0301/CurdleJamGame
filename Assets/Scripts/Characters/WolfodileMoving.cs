@@ -16,10 +16,14 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
 
     Vector2 direction;
     Rigidbody2D rb;
+    Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        bool lookingLeft = (moveDirection == MovementDirection.LEFT);
+        animator.SetBool("LookingLeft", lookingLeft);
     }
 
     public void FixedUpdate()
@@ -46,17 +50,19 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
         ContactFilter2D contactFilter2D = new();
         contactFilter2D.SetLayerMask(wallMask);
         RaycastHit2D[] result = new RaycastHit2D[1];
-        Physics2D.Raycast(transform.position, new Vector2(direction.x, 0f), contactFilter2D, result, 0.75f);
+        Physics2D.Raycast(transform.position, new Vector2(direction.x, 0f), contactFilter2D, result, 1f);
 
         if (result[0].collider != null)
         {
             if (moveDirection == MovementDirection.LEFT)
             {
                 SetMovementDirection(MovementDirection.RIGHT);
+                animator.SetBool("LookingLeft", false);
             }
             else if (moveDirection == MovementDirection.RIGHT)
             {
                 SetMovementDirection(MovementDirection.LEFT);
+                animator.SetBool("LookingLeft", true);
             }
         }
     }
@@ -71,7 +77,7 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
         if (collision.transform.TryGetComponent(out SheepEvents sheepToDestroy))
         {
             DestroyNPSheep(sheepToDestroy);
-            //animator.SetTrigger("IsEating");
+            animator.SetTrigger("IsEating");
         }
     }
 
@@ -83,5 +89,6 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
     public void StartMovement()
     {
         awake = true;
+        animator.SetTrigger("Awake");
     }
 }

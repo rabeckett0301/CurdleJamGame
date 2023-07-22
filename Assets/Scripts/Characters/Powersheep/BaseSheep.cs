@@ -37,7 +37,7 @@ public class BaseSheep : MonoBehaviour, IPickupable
         HoldPoint = null;
     }
 
-    public void Pickup(Transform holdPoint)
+    public virtual void Pickup(Transform holdPoint)
     {
         BeingCarried = true;
         rb.gravityScale = 0;

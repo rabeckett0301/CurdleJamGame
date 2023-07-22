@@ -24,4 +24,9 @@ public class Wolfodile : MonoBehaviour, IDestroySheep
     {
         sheepToDestroy.DestroySheep();
     }
+
+    public void SetToAwake()
+    {
+        animator.SetTrigger("Awake");
+    }
 }
