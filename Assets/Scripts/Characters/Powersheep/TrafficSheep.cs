@@ -13,6 +13,9 @@ public class TrafficSheep : BaseSheep, IInteractable
 
     private TrafficMode mode;
 
+    [SerializeField] AudioClip stopSound;
+    [SerializeField] AudioClip goSound;
+
 
     private void FixedUpdate()
     {
@@ -89,12 +92,14 @@ public class TrafficSheep : BaseSheep, IInteractable
             mode = TrafficMode.STOP;
             animator.SetTrigger("IsFlipping");
             animator.SetBool("IsStopOn", true);
+            audioSource.PlayOneShot(stopSound, 0.7f);
         }
         else
         {
             mode = TrafficMode.GO;
             animator.SetTrigger("IsFlipping");
             animator.SetBool("IsStopOn", false);
+            audioSource.PlayOneShot(goSound, 0.7f);
         }
     }
 }

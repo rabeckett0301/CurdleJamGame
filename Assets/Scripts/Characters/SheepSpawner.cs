@@ -12,6 +12,9 @@ public class SheepSpawner : MonoBehaviour
     int sheepCount;
     bool spawningSheepRunning;
 
+    [Header("Audio Clip")]
+    [SerializeField] AudioClip[] spawnSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,7 @@ public class SheepSpawner : MonoBehaviour
         GameObject sheep = Instantiate(sheepPrefab, transform.position, Quaternion.identity);
         sheep.GetComponent<SheepMovement>().SetMovementDirection(movementDirection);
         OnSheepSpawn?.Raise();
+        GetComponent<AudioSource>().PlayOneShot(spawnSounds[Random.Range(0, spawnSounds.Length)]);
         yield return new WaitForSeconds(timeToWait);
         sheepCount++;
         SpawnSheep();

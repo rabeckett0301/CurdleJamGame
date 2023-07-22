@@ -622,6 +622,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -403.2129
       objectReference: {fileID: 0}
+    - target: {fileID: 5550502532943102108, guid: 4a794c48bfeceaa4db5573bb11afe300, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973916377204929148, guid: 4a794c48bfeceaa4db5573bb11afe300, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8691684809070440963, guid: 4a794c48bfeceaa4db5573bb11afe300, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -945,14 +953,6 @@ PrefabInstance:
     - target: {fileID: 6811894685994242306, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811894685994242307, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
-      propertyPath: boostTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6811894685994242307, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
-      propertyPath: boostForce
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6811894685994242310, guid: 008339a1ce5dbc04b921cfad2c46bf8c, type: 3}
       propertyPath: m_Name
