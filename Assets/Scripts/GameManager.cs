@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
         if (sheepSpawned == sheepSaved + sheepDied && sheepDied < GlobalConsts.MAX_SHEEP_DEATHS)
         {
             OnWin?.Raise();
+
+            if (PlayerPrefs.GetInt(GlobalConsts.LEVELS_UNLOCKED) < SceneManager.GetActiveScene().buildIndex)
+            {
+                PlayerPrefs.SetInt(GlobalConsts.LEVELS_UNLOCKED, PlayerPrefs.GetInt(GlobalConsts.LEVELS_UNLOCKED) + 1);
+            }
         }
     }
 

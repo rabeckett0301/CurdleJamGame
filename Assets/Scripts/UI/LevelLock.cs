@@ -10,13 +10,25 @@ public class LevelLock : MonoBehaviour
 
     private int unlocked;
 
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey(GlobalConsts.LEVELS_UNLOCKED)) { PlayerPrefs.SetInt(GlobalConsts.LEVELS_UNLOCKED, 1); }
+    }
+
+    private void OnEnable()
+    {
+        LockLevels();
+
+        print($"index: {PlayerPrefs.GetInt(GlobalConsts.LEVELS_UNLOCKED)}");
+    }
+
     public void LockLevels()
     {
         unlocked = PlayerPrefs.GetInt(GlobalConsts.LEVELS_UNLOCKED);
 
-        for (var i = 0; i <= unlocked; i++)
+        for (var i = 0; i < unlocked; i++)
         {
-            levels[i + 1].interactable = true;
+            levels[i].interactable = true;
         }
     }
 
