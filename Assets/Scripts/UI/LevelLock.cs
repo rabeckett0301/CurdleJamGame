@@ -18,8 +18,6 @@ public class LevelLock : MonoBehaviour
     private void OnEnable()
     {
         LockLevels();
-
-        print($"index: {PlayerPrefs.GetInt(GlobalConsts.LEVELS_UNLOCKED)}");
     }
 
     public void LockLevels()
