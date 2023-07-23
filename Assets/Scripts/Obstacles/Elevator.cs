@@ -43,7 +43,9 @@ public class Elevator : MonoBehaviour, IActivatable
     {
         while (Vector2.Distance(transform.position, startPoint.position) > 0.05f)
         {
-            transform.position += new Vector3(0, movementSpeed) * Time.deltaTime;
+            Vector3 direction = (startPoint.position - transform.position).normalized;
+
+            transform.position += direction * movementSpeed * Time.deltaTime;
             yield return null;
         }
     }

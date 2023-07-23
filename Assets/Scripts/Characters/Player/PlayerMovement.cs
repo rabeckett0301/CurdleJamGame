@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
 
     [HideInInspector] public LookDirection lookDirection;
+    [SerializeField] LayerMask wallMask;
 
-    bool hasJumped;
     Rigidbody2D rb;
     Vector2 spawnPoint;
     Animator animator;
@@ -53,52 +53,39 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("LastMovedLeft", lastMovedLeft);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (IsGrounded())
         {
-            keyStateSpace = ksSpace.Down;
-            animator.SetBool("IsJumping", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            keyStateSpace = ksSpace.Up;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (keyStateSpace == ksSpace.Down && !hasJumped)
-        {
-            Jump();
-            hasJumped = true;
-        }
-        else
-        {
-
-        }
-    }
 
     private void Jump()
     {
         rb.velocity = Vector2.zero;
-        rb.velocity = new Vector2(0, jumpForce);
+        rb.velocity = new Vector2(0, jumpForce); 
         GetComponent<PlayerAudio>().PlayJumpSound();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public bool IsGrounded()
     {
-        /*Vector2 direction = collision.transform.position - transform.position;
+        ContactFilter2D contactFilter2D = new();
+        contactFilter2D.SetLayerMask(wallMask);
+        RaycastHit2D[] result = new RaycastHit2D[1];
+        Physics2D.Raycast(transform.position, Vector2.down, contactFilter2D, result, 0.75f);
 
-        //check whether the collision was with the ground
-        if (direction.y < 0)
+        if(result[0].collider != null)
         {
-            hasJumped = false;
             animator.SetBool("IsJumping", false);
-        }*/
-
-        if(rb.velocity.y <= 0.1f)
+            return true;
+        }
+        else
         {
-            hasJumped = false;
-            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsJumping", true);
+            return false;
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour, IActivatable
+public class Spikes : MonoBehaviour, IActivatable, IDestroySheep
 {
     [SerializeField] GameObject spikeSprites;
 
@@ -18,8 +18,16 @@ public class Spikes : MonoBehaviour, IActivatable
         GetComponent<BoxCollider2D>().enabled = true;
     }
 
+    public void DestroyNPSheep(SheepEvents sheepToDestroy)
+    {
+        sheepToDestroy.DestroySheep();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+        if (collision.transform.TryGetComponent(out SheepEvents sheepToDestroy))
+        {
+            DestroyNPSheep(sheepToDestroy);
+        }
     }
 }

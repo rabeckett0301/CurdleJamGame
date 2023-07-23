@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedPointer: {fileID: 56479181446854534, guid: ead7bfbc0e419764d9f82908a1154a84, type: 3}
-  boostTime: 10
+  boostTime: 7.5
   boostForce: 4
   inflateSound: {fileID: 8300000, guid: d4a7bdbade897a54eafa9c3fe3082c10, type: 3}
   deflateSound: {fileID: 8300000, guid: e030d63dd58d7ad489cde08c1d5e4c5a, type: 3}

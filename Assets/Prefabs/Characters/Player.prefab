@@ -228,6 +228,9 @@ MonoBehaviour:
   speed: 6
   jumpForce: 8
   lookDirection: 0
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!50 &3975290531530412417
 Rigidbody2D:
   serializedVersion: 4

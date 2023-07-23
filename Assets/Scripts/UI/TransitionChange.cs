@@ -35,4 +35,10 @@ public class TransitionChange : MonoBehaviour
 
         SceneManager.LoadScene(index);
     }
+
+    public void StopMenuMusic()
+    {
+        MenuMusicManager musicManager = FindObjectOfType<MenuMusicManager>();
+        musicManager.DestroyMenuMusic();
+    }
 }
