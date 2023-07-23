@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] AudioMixerSnapshot defaultSnapshot;
     [SerializeField] AudioMixerSnapshot startedSnapshot;
     [SerializeField] AudioMixerSnapshot stingerSnapshot;
+    [SerializeField] AudioMixerSnapshot loseSnapshot;
 
     [SerializeField] AudioSource calmMusicSource;
     [SerializeField] AudioSource startedMusicSource;
@@ -23,6 +24,11 @@ public class MusicManager : MonoBehaviour
     public void TransferToStartedSnapshot()
     {
         startedSnapshot.TransitionTo(0.25f);
+    }
+
+    public void TransferToLoseSnapshot()
+    {
+        startedSnapshot.TransitionTo(0.75f);
     }
 
     public void PlayWinStinger()

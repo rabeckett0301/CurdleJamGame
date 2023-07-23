@@ -7,6 +7,7 @@ public class BaseSheep : MonoBehaviour, IPickupable
     public bool BeingCarried { get; set; }
     public Transform HoldPoint { get; set; }
     public bool Selected { get; set; }
+    public bool CanBeCarried { get; set; }
 
     [SerializeField] GameObject selectedPointer;
 
@@ -27,6 +28,7 @@ public class BaseSheep : MonoBehaviour, IPickupable
         mySelectedPointer.SetActive(false);
 
         selectedPointer = mySelectedPointer;
+        CanBeCarried = true;
     }
 
     public void Drop(Transform dropPoint)
@@ -35,13 +37,25 @@ public class BaseSheep : MonoBehaviour, IPickupable
         transform.position = dropPoint.position;
         rb.gravityScale = gravityScale;
         HoldPoint = null;
+        transform.SetParent(null);
     }
 
-    public virtual void Pickup(Transform holdPoint)
+    public virtual bool TryPickup(Transform holdPoint)
     {
-        BeingCarried = true;
-        rb.gravityScale = 0;
-        HoldPoint = holdPoint;
+        if (CanBeCarried)
+        {
+            BeingCarried = true;
+            rb.gravityScale = 0;
+            HoldPoint = holdPoint;
+            transform.SetParent(holdPoint);
+            transform.localPosition = Vector2.zero;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
     protected void Update()

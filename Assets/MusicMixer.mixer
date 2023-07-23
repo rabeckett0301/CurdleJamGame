@@ -65,6 +65,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-3969435174868223606
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lose
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 80831d3460ff2ab45b228477bd246a37
+  m_FloatValues:
+    d27e6d4285442194699c0b995a37e127: -80
+    c698f694c453b5d48a219e8353a8dfb5: -80
+    d67379953f363f94faa7da460ceb5e87: -80
+  m_TransitionOverrides: {}
 --- !u!243 &-1834602380601714692
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -97,6 +111,7 @@ AudioMixerController:
   - {fileID: 24500006}
   - {fileID: 9069651988955321419}
   - {fileID: -6943301792338771376}
+  - {fileID: -3969435174868223606}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -110,7 +125,7 @@ AudioMixerController:
     - 1f8af4bc79d3f5e49b5a7e8d8ee01c2f
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -6943301792338771376}
+  m_TargetSnapshot: {fileID: -3969435174868223606}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

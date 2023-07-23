@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpringSheep : BaseSheep, IInteractable
 {
+    [SerializeField] StartMode startMode;
     [SerializeField] float bounceForce;
     [SerializeField] LayerMask bounceableMask;
     float cooldownBetweenBounces = 0.35f;
@@ -14,6 +15,13 @@ public class SpringSheep : BaseSheep, IInteractable
     [SerializeField] AudioClip[] idleSounds;
     [SerializeField] AudioClip[] boingSounds;
     [SerializeField] AudioClip springSound;
+
+    private new void Start()
+    {
+        base.Start();
+
+        InitializeSpringSheep();
+    }
 
     private void FixedUpdate()
     {
@@ -61,15 +69,8 @@ public class SpringSheep : BaseSheep, IInteractable
         if (!HoldPoint)
         {
             springMode = !springMode;
+            CanBeCarried = !springMode;
             animator.SetBool("SpringMode", springMode);
-        }
-    }
-
-    public override void Pickup(Transform holdPoint)
-    {
-        if (!springMode)
-        {
-            base.Pickup(holdPoint);
         }
     }
 
@@ -77,4 +78,25 @@ public class SpringSheep : BaseSheep, IInteractable
     {
         audioSource.PlayOneShot(idleSounds[Random.Range(0, idleSounds.Length)], 0.15f);
     }
+
+    void InitializeSpringSheep()
+    {
+        if (startMode == StartMode.IDLE)
+        {
+            springMode = false;
+            CanBeCarried = true;
+        }
+        else
+        {
+            springMode = true;
+            CanBeCarried = false;
+        }
+        animator.SetBool("SpringMode", springMode);
+    }
+}
+
+public enum StartMode
+{
+    IDLE,
+    SPRING
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IPickupable
 {
-    public void Pickup(Transform holdPoint);
+    public bool TryPickup(Transform holdPoint);
 
     public void Drop(Transform dropPoint);
 
@@ -21,4 +21,6 @@ public interface IPickupable
     public Transform HoldPoint { get; set; }
 
     public bool Selected { get; set; }
+
+    public bool CanBeCarried { get; set; }
 }

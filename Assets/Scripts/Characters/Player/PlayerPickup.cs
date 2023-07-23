@@ -60,22 +60,19 @@ public class PlayerPickup : MonoBehaviour
             }
 
             //fix this
-            selectedItem.Pickup(holdPoint);
-            heldItem = selectedItem.GetGameObject();
-            heldItem.transform.SetParent(holdPoint);
-            heldItem.transform.localPosition = Vector2.zero;
-            selectedItem.Selected = false;
-            selectedItem = null;
-            dropPoint.SetActive(true);
-            animator.SetBool("IsHolding", true);
-
-            GetComponent<PlayerAudio>().PlayPickupSound();
-            
+            if (selectedItem.TryPickup(holdPoint))
+            {
+                heldItem = selectedItem.GetGameObject();
+                selectedItem.Selected = false;
+                selectedItem = null;
+                dropPoint.SetActive(true);
+                animator.SetBool("IsHolding", true);
+                GetComponent<PlayerAudio>().PlayPickupSound();
+            }
         }
         else if(Input.GetKeyDown(KeyCode.E) && heldItem)
         {
             heldItem.GetComponent<IPickupable>().Drop(dropPoint.transform);
-            heldItem.transform.SetParent(null);
             heldItem = null;
             dropPoint.SetActive(false);
             animator.SetBool("IsHolding", false);
