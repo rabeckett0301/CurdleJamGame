@@ -28,7 +28,7 @@ public class MusicManager : MonoBehaviour
 
     public void TransferToLoseSnapshot()
     {
-        startedSnapshot.TransitionTo(0.75f);
+        loseSnapshot.TransitionTo(1f);
     }
 
     public void PlayWinStinger()

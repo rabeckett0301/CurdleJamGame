@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5591806595325534570}
   - component: {fileID: 5591806595325534571}
   - component: {fileID: 5591806595325534569}
+  - component: {fileID: 327367016815977269}
   - component: {fileID: 5591806595325534572}
   m_Layer: 0
   m_Name: MusicManager
@@ -381,6 +382,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &327367016815977269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591806595325534576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20d86df764d65e4c9fda526fa5fb156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 11357eb046b5b68468cbdf8b99d2063f, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5591806595325534572}
+        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
+        m_MethodName: TransferToLoseSnapshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5591806595325534572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +425,7 @@ MonoBehaviour:
   defaultSnapshot: {fileID: 24500006, guid: d890204bff6ec544490ca5c5327eb905, type: 2}
   startedSnapshot: {fileID: 9069651988955321419, guid: d890204bff6ec544490ca5c5327eb905, type: 2}
   stingerSnapshot: {fileID: -6943301792338771376, guid: d890204bff6ec544490ca5c5327eb905, type: 2}
+  loseSnapshot: {fileID: -3969435174868223606, guid: d890204bff6ec544490ca5c5327eb905, type: 2}
   calmMusicSource: {fileID: 5591806595325534575}
   startedMusicSource: {fileID: 5591806595325534573}
   stingerSource: {fileID: 5591806595325534570}

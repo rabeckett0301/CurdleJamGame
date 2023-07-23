@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnLevelStarted: {fileID: 11400000, guid: 653181589263bfb43bebc72bb3afc53a, type: 2}
   OnWin: {fileID: 11400000, guid: 84c7e164e32de264bbbd1431d2edf0d9, type: 2}
+  OnLevelFailed: {fileID: 11400000, guid: 11357eb046b5b68468cbdf8b99d2063f, type: 2}
 --- !u!114 &5330260704293967301
 MonoBehaviour:
   m_ObjectHideFlags: 0

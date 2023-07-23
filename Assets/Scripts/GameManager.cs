@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameEvent OnLevelStarted;
     public GameEvent OnWin;
+    public GameEvent OnLevelFailed;
 
     private int sheepSpawned;
     private int sheepDied;
@@ -38,6 +39,10 @@ public class GameManager : MonoBehaviour
     public void IncreaseDeadSheep()
     {
         sheepDied++;
+        if(sheepDied == sheepSpawned)
+        {
+            OnLevelFailed?.Raise();
+        }
     }
     public void IncreaseSavedSheep()
     {
