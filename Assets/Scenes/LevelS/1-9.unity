@@ -12273,6 +12273,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1804038230}
     m_Modifications:
+    - target: {fileID: 4926741822424297745, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3abe24c70c744bc43b000160fbaf26ee, type: 3}
     - target: {fileID: 4926741823636590396, guid: c2b12a40ffc11924883499126d3a5924, type: 3}
       propertyPath: timeBetweenSheep
       value: 0.75
