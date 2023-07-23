@@ -8,6 +8,10 @@ public class LevelWin : MonoBehaviour
 {
     [SerializeField] GameEvent OnStarSpawn;
 
+    [Header("Panel of buttons")]
+    public GameObject Buttons;
+
+    [Header("Sprites")]
     public List<Image> Sprites = new List<Image>();
     public List<Sprite> WinSprites = new List<Sprite>();
 
@@ -55,6 +59,6 @@ public class LevelWin : MonoBehaviour
             yield return delayPerStar;
         }
 
-
+        Buttons.SetActive(true);
     }
 }
