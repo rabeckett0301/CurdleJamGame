@@ -351,6 +351,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a5506e64c07f0cc478f004ae58e31ece, type: 3}
   - {fileID: 8300000, guid: 65c2f237df712b545a36058112ab5b52, type: 3}
   - {fileID: 8300000, guid: fec0085ea6b272d44a2e0a5081c23caa, type: 3}
+  jumpSound: {fileID: 8300000, guid: 5c405a07f9370d04a88a2bff929ff8fc, type: 3}
+  pickUp: {fileID: 8300000, guid: 642c400e593128f40be048fae55896c3, type: 3}
+  place: {fileID: 8300000, guid: 8650cb5c81f646648b901934335a7cb7, type: 3}
 --- !u!82 &2729967715826587608
 AudioSource:
   m_ObjectHideFlags: 0

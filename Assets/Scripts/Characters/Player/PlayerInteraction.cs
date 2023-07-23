@@ -15,6 +15,11 @@ public class PlayerInteraction : MonoBehaviour
             Collider2D[] results = new Collider2D[10];
             Physics2D.OverlapCircle(transform.position, range, contactFilter2D, results);
             
+            if(results[0] == null)
+            {
+                return;
+            }
+
             foreach(Collider2D collider in results)
             {
                 if (collider.gameObject.TryGetComponent(out IInteractable interactable))

@@ -18,10 +18,14 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
     Rigidbody2D rb;
     Animator animator;
 
+    [SerializeField] AudioClip[] eatingSounds;
+    AudioSource audioSource;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         bool lookingLeft = (moveDirection == MovementDirection.LEFT);
         animator.SetBool("LookingLeft", lookingLeft);
     }
@@ -77,6 +81,7 @@ public class WolfodileMoving : MonoBehaviour, IDestroySheep
         if (collision.transform.TryGetComponent(out SheepEvents sheepToDestroy))
         {
             DestroyNPSheep(sheepToDestroy);
+            audioSource.PlayOneShot(eatingSounds[Random.Range(0, eatingSounds.Length)], 0.5f);
             animator.SetTrigger("IsEating");
         }
     }

@@ -101,6 +101,16 @@ MonoBehaviour:
   bounceableMask:
     serializedVersion: 2
     m_Bits: 384
+  idleSounds:
+  - {fileID: 8300000, guid: b7f571b04e9157f489595bb9b6ed946d, type: 3}
+  - {fileID: 8300000, guid: d7578ee79871db148bbd4b252932a556, type: 3}
+  - {fileID: 8300000, guid: 5012dc0690ee44a418a42833a534249d, type: 3}
+  - {fileID: 8300000, guid: 1c5d3994e0fece4438c10b1a6f3bf1d7, type: 3}
+  boingSounds:
+  - {fileID: 8300000, guid: fd5323bab7f8cc24bb3c16b598621a97, type: 3}
+  - {fileID: 8300000, guid: 66e8cac5a4083524b882a80a961f1de1, type: 3}
+  - {fileID: 8300000, guid: f1f62bb12772a88489429848f2d7c86e, type: 3}
+  springSound: {fileID: 8300000, guid: 0c88bce855677e241b54df67a8044440, type: 3}
 --- !u!95 &1357199566860580476
 Animator:
   serializedVersion: 5

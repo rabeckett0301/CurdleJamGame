@@ -10,6 +10,11 @@ public class SpringSheep : BaseSheep, IInteractable
     bool canBounce = true;
     bool springMode = false;
 
+    [Header("Audio clips")]
+    [SerializeField] AudioClip[] idleSounds;
+    [SerializeField] AudioClip[] boingSounds;
+    [SerializeField] AudioClip springSound;
+
     private void FixedUpdate()
     {
         if (HoldPoint || !canBounce || !springMode)
@@ -44,6 +49,8 @@ public class SpringSheep : BaseSheep, IInteractable
     IEnumerator HandleCooldown(float cooldown)
     {
         animator.SetTrigger("Bouncing");
+        audioSource.PlayOneShot(boingSounds[Random.Range(0, boingSounds.Length)]);
+        audioSource.PlayOneShot(springSound);
         canBounce = false;
         yield return new WaitForSeconds(cooldown);
         canBounce = true;
@@ -64,5 +71,10 @@ public class SpringSheep : BaseSheep, IInteractable
         {
             base.Pickup(holdPoint);
         }
+    }
+
+    public void PlayRandomIdleSound()
+    {
+        audioSource.PlayOneShot(idleSounds[Random.Range(0, idleSounds.Length)], 0.15f);
     }
 }

@@ -185,6 +185,10 @@ MonoBehaviour:
   scareableMask:
     serializedVersion: 2
     m_Bits: 256
+  scareSounds:
+  - {fileID: 8300000, guid: a3bc5e49c1b56364fb5be8d147cee96c, type: 3}
+  - {fileID: 8300000, guid: 44072bd804c78f045862f5a06681370d, type: 3}
+  - {fileID: 8300000, guid: 8591d3f0cda71d94e95582f2ce26dd8a, type: 3}
 --- !u!95 &152528828989766954
 Animator:
   serializedVersion: 5

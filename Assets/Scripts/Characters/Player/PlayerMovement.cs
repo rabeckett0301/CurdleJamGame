@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         rb.velocity = new Vector2(0, jumpForce);
+        GetComponent<PlayerAudio>().PlayJumpSound();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

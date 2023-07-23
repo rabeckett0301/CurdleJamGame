@@ -59,6 +59,7 @@ public class PlayerPickup : MonoBehaviour
                 return;
             }
 
+            //fix this
             selectedItem.Pickup(holdPoint);
             heldItem = selectedItem.GetGameObject();
             heldItem.transform.SetParent(holdPoint);
@@ -67,6 +68,8 @@ public class PlayerPickup : MonoBehaviour
             selectedItem = null;
             dropPoint.SetActive(true);
             animator.SetBool("IsHolding", true);
+
+            GetComponent<PlayerAudio>().PlayPickupSound();
             
         }
         else if(Input.GetKeyDown(KeyCode.E) && heldItem)
@@ -76,6 +79,8 @@ public class PlayerPickup : MonoBehaviour
             heldItem = null;
             dropPoint.SetActive(false);
             animator.SetBool("IsHolding", false);
+
+            GetComponent<PlayerAudio>().PlayDropSound();
         }
     }
 

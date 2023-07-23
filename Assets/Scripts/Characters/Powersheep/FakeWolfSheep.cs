@@ -7,10 +7,17 @@ public class FakeWolfSheep : BaseSheep
     [SerializeField] float range;
     [SerializeField] LayerMask scareableMask;
 
+    [SerializeField] AudioClip[] scareSounds;
+
+    float cooldownTime = 0.3f;
+    bool canScare = true;
     
     private void FixedUpdate()
     {
-        CheckForSheep();
+        if (canScare)
+        {
+            CheckForSheep();
+        }
     }
 
     void CheckForSheep()
@@ -41,6 +48,7 @@ public class FakeWolfSheep : BaseSheep
                 sheepMovement.SetMovementDirection(MovementDirection.LEFT);
                 SetLastLookedLeft(true);
                 animator.SetTrigger("IsScaring");
+                
             }
             else
             {
@@ -48,6 +56,16 @@ public class FakeWolfSheep : BaseSheep
                 SetLastLookedLeft(false);
                 animator.SetTrigger("IsScaring");
             }
+
+            StartCoroutine(HandleCooldownTime());
+            audioSource.PlayOneShot(scareSounds[Random.Range(0, scareSounds.Length)]);
         }
+    }
+
+    IEnumerator HandleCooldownTime()
+    {
+        canScare = false;
+        yield return new WaitForSeconds(cooldownTime);
+        canScare = true;
     }
 }
