@@ -23,6 +23,7 @@ public class SheepMovement : MonoBehaviour
     private void Update()
     {
         animator.SetFloat("VelocityY", rb.velocity.y);
+        animator.SetBool("IsGrounded", IsGrounded());
     }
 
     private void FixedUpdate()
@@ -75,6 +76,16 @@ public class SheepMovement : MonoBehaviour
                 SetMovementDirection(MovementDirection.LEFT);
             }
         }
+    }
+
+    bool IsGrounded()
+    {
+        ContactFilter2D contactFilter2D = new();
+        contactFilter2D.SetLayerMask(wallMask);
+        RaycastHit2D[] result = new RaycastHit2D[1];
+        Physics2D.Raycast(transform.position, Vector2.down, contactFilter2D, result, 0.75f);
+
+        return result[0].collider != null;
     }
 }
 
